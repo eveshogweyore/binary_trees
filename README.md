@@ -6,13 +6,13 @@
 This is a documentation for a binary tree implementation in C. It covers various traversal methods (pre-order, in-order, post-order), as well as functions to measure the height, depth, size, and count the number of leaves in the tree.
 
 ## Table of Contents
-- [Binary Trees](#Binary trees)
+- [Binary Trees](#Binary_trees)
 - [Overview](##Overview)
 - [Tasks](##Tasks)
-- [How to Start](##How to start)
+- [How to Start](##How_to_start)
 - [Example](##Example)
-- [How to Contribute](##How to Contribute)
-- [Getting Started](##Getting Started)
+- [How to Contribute](##How_to_Contribute)
+- [Getting Started](##Getting_Started)
 - [Resources](##Resources)
 - [Authors](##Authors)
 
