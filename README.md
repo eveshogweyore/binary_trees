@@ -1,4 +1,4 @@
-# Binary trees
+# Binary Trees
 
 [![Binary Tree](https://www.geeksforgeeks.org/wp-content/uploads/binary-tree-to-DLL.png)](https://www.geeksforgeeks.org/wp-content/uploads/binary-tree-to-DLL.png)
 
@@ -6,19 +6,15 @@
 This is a documentation for a binary tree implementation in C. It covers various traversal methods (pre-order, in-order, post-order), as well as functions to measure the height, depth, size, and count the number of leaves in the tree.
 
 ## Table of Contents
-1. [New Node](#new-node)
-2. [Insert Left](#insert-left)
-3. [Insert Right](#insert-right)
-4. [Delete](#delete)
-5. [Is Leaf](#is-leaf)
-6. [Is Root](#is-root)
-7. [Pre-order Traversal](#pre-order-traversal)
-8. [In-order Traversal](#in-order-traversal)
-9. [Post-order Traversal](#post-order-traversal)
-10. [Height](#height)
-11. [Depth](#depth)
-12. [Size](#size)
-13. [Leaves](#leaves)
+- [Binary Trees](#Binary trees)
+- [Overview](##Overview)
+- [Tasks](##Tasks)
+- [How to Start](##How to start)
+- [Example](##Example)
+- [How to Contribute](##How to Contribute)
+- [Getting Started](##Getting Started)
+- [Resources](##Resources)
+- [Authors](##Authors)
 
 <details>
   <summary>Tasks</summary>
@@ -39,7 +35,7 @@ This is a documentation for a binary tree implementation in C. It covers various
 | **11. Depth** | Write a function that measures the depth of a node in a binary tree. | `size_t binary_tree_depth(const binary_tree_t *tree);` | `tree`: Pointer to the node to measure the depth. | The depth of the node. If tree is NULL, return 0. |
 | **12. Size** | Write a function that measures the size of a binary tree. | `size_t binary_tree_size(const binary_tree_t *tree);` | `tree`: Pointer to the root node of the tree to measure the size. | The size of the tree. If tree is NULL, the function must return 0. |
 | **13. Leaves** | Write a function that counts the leaves in a binary tree. | `size_t binary_tree_leaves(const binary_tree_t *tree);` | `tree`: Pointer to the root node of the tree to count the number of leaves. | The number of leaves in the tree. If tree is NULL, the function must return 0. A NULL pointer is not a leaf. |
-<details>
+</details>
   
 ## How to Start
 To use these functionalities, include the respective header file and link with the binary tree implementation in your C project.
@@ -86,4 +82,4 @@ cd binary_trees
 
 ## Authors
 - [Aghaulor Gift](aghaulor.gift@gmail.com)
-- [Eveshogweyore Alle]()
+- [Eveshogweyore Alle](alleeveshogweyore@gmail.com)
