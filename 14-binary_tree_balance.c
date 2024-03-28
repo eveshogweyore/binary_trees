@@ -26,7 +26,7 @@ int max_value(int fnum, int snum)
 int binary_tree_balance(const binary_tree_t *tree)
 {
 	int leftHeight, rightHeight;
-	static int counter = 0;
+	static int counter = 1;
 
 	if (tree == NULL)
 		return (0);
@@ -35,8 +35,8 @@ int binary_tree_balance(const binary_tree_t *tree)
 	leftHeight = binary_tree_balance(tree->left);
 	rightHeight = binary_tree_balance(tree->right);
 	counter--;
-	
-	if (counter == 0 || tree->parent == NULL)
+
+	if (counter == 1 || tree->parent == NULL)
 		return (leftHeight - rightHeight);
 
 	return (max_value(leftHeight, rightHeight) + 1);
