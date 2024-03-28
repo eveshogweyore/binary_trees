@@ -15,6 +15,9 @@ int is_balance(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
+	if (!tree->left && !tree->right)
+		return (1);
+
 	counter++;
 	lBal = is_balance(tree->left);
 	rBal = is_balance(tree->right);
@@ -24,8 +27,6 @@ int is_balance(const binary_tree_t *tree)
 		return (lBal && rBal);
 
 	if (tree->left && tree->right)
-		return (1);
-	if (!tree->left && !tree->right)
 		return (1);
 
 	return (0);
@@ -59,7 +60,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (is_balance(tree))
 	{
-		if (tree_height(tree->left) && tree_height(tree->right))
+		if (tree_height(tree->left) == tree_height(tree->right))
 			return (1);
 		else
 			return (0);
