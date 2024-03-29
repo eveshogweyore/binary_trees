@@ -1,39 +1,13 @@
 #include "binary_trees.h"
 
 /**
- * balance- Measure the balance factor of a binary tree.
- * @tree: A pointer to the root node.
+ * tree_height - Measure the height of a binary tree.
+ * @tree: Pointer the root node of binary tree.
  *
- * Return: 0 if tree is NULL.
+ * Return: On success, height of tree. On failure, 0.
  */
 
-int is_balance(const binary_tree_t *tree)
-{
-	int lBal, rBal;
-	static int counter = 1;
-
-	if (tree == NULL)
-		return (0);
-
-	if (!tree->left && !tree->right)
-		return (1);
-
-	counter++;
-	lBal = is_balance(tree->left);
-	rBal = is_balance(tree->right);
-	counter--;
-
-	if (counter == 1 || tree->parent == NULL)
-		return (lBal && rBal);
-
-	if (tree->left && tree->right)
-		return (1);
-
-	return (0);
-	/*return (1 + (lHeight > rHeight ? lHeight : rHeight));*/
-}
-
-int tree_height(const binary_tree_t *tree)
+size_t tree_height(const binary_tree_t *tree)
 {
 	int lh, rh;
 
@@ -47,6 +21,49 @@ int tree_height(const binary_tree_t *tree)
 }
 
 /**
+ * binary_tree_size- The size of the binary tree.
+ * @tree: A pointer to the root node of the tree to measure the size.
+ *
+ * Return: 0 if tree  is NULL.
+ */
+
+size_t binary_tree_size(const binary_tree_t *tree)
+{
+	size_t leftSize, rightSize;
+
+	if (tree == NULL)
+		return (0);
+
+	leftSize = binary_tree_size(tree->left);
+	rightSize = binary_tree_size(tree->right);
+
+	return (leftSize + rightSize + 1);
+}
+
+/**
+ * _pow - Returns the exponential given base and power.
+ * @base: The base number.
+ * @power: The power.
+ *
+ * Return: On success, the exponentiation.
+ */
+size_t _pow(int base, int power)
+{
+	int i = 0, result = 1;
+
+	if (power == 0)
+		return (1);
+
+	while (i < power)
+	{
+		result *= base;
+		i++;
+	}
+
+	return (result);
+}
+
+/**
  * binary_tree_is_perfect - Checks if Binary tree is perfect.
  * @tree: Pointer to root node of binary tree.
  *
@@ -55,29 +72,16 @@ int tree_height(const binary_tree_t *tree)
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
+	size_t height, size;
+
 	if (tree == NULL)
 		return (0);
 
-	if (is_balance(tree))
-	{
-		if (tree_height(tree->left) == tree_height(tree->right))
-			return (1);
-		else
-			return (0);
-	}
+	height = tree_height(tree);
+	size = binary_tree_size(tree);
+
+	if ((_pow(2, height) - 1) == size)
+		return (1);
 
 	return (0);
-	/*
-	binary_tree_is_perfect(tree->left);
-	binary_tree_is_perfect(tree->right);
-
-	if (tree->parent == NULL)
-		return (lh == rh ? 1 : 0);
-
-	if (tree->left && tree->right)
-		return (1);
-	if (!tree->left && !tree->right)
-		return (1);
-	return (0);
-	*/
 }
